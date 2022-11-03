@@ -187,7 +187,7 @@ bindsym $mod+r mode "resize"
 #}
 exec feh --randomize --bg-fill ~/Pictures
 exec compton -b
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always polybar
 #
 new_window none
 new_float normal
