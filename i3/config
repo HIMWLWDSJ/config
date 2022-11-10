@@ -193,5 +193,5 @@ new_window none
 new_float normal
 hide_edge_borders both
 #
-gaps inner 8
-gaps outer 6
+gaps inner 2
+gaps outer 2
