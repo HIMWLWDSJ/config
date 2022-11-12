@@ -109,7 +109,7 @@ int main()
         if (imgs[i].num == 1)
         {
             sprintf(cmd,
-                    "wget -O '%s%s' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s0_master1200.jpg",
+                    "wget -O '%s%s.jpg' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s0_master1200.jpg",
                     directory,
                     imgs[i].name,
                     imgs[i].url);
@@ -121,7 +121,7 @@ int main()
             {
                 memset(cmd,'\0',280);
                 sprintf(cmd,
-                    "wget -O '%s%s_%d' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s%d_master1200.jpg",
+                    "wget -O '%s%s_%d.jpg' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s%d_master1200.jpg",
                     directory,
                     imgs[i].name,
                     j+1,
