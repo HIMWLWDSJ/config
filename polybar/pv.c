@@ -77,9 +77,9 @@ int main()
     src = html;
 
     // Create the Img Objects
-    Obj imgs[50];
+    Obj imgs[49];
     int imgn = 0;
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 49; i++)
     {
         CreateObj(&imgs[i], i + 1);
         imgn += imgs[i].num;
@@ -103,7 +103,7 @@ int main()
 
     // Download Pictures
     char cmd[280];
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 49; i++)
     {
         memset(cmd, '\0', 280);
         if (imgs[i].num == 1)
