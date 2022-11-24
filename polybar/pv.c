@@ -56,8 +56,38 @@ void CreateObj(Obj *obj, int code)
     // Set src html
     src = end;
 }
-int main()
+int main(int argc,char* argv[])
 {
+    //Top
+    int top = 0;
+    int last = 0;
+    switch (argc) {
+      case 1:
+      last = 49;
+        break;
+      case 2:
+        last = atoi(argv[1]);
+      if(last > 49 || last <= 0){
+        printf("Err: arg error.\n");
+        return -1;
+      }
+        break;
+      case 3:
+        top = atoi(argv[1]);
+        last = atoi(argv[2]);
+        if(top < 0 || top > 49 || last <= 0|| last > 49){
+          printf("Err: arg error.\n");
+          return -1;
+      }
+
+        break;
+      default:
+        printf("Err: arg error.\n");
+        return -1;
+
+        break;
+    }
+
     // Read HTML File
     char htmlPath[200];
     memset(htmlPath, '\0', 200);
@@ -76,13 +106,15 @@ int main()
     fclose(fp);
     src = html;
 
-    // Create the Img Objects
-    Obj imgs[49];
+    // Create the Img Objectsi
+    Obj imgs[last - top];
     int imgn = 0;
-    for (int i = 0; i < 49; i++)
+    for (int i = 0; i < last; i++)
     {
+      if(i >= top){
         CreateObj(&imgs[i], i + 1);
         imgn += imgs[i].num;
+      }
     }
     printf("There are %d Pictures\nEnter Output Directory (Lenth < 200):\n", imgn);
     char directory[201];
@@ -103,13 +135,13 @@ int main()
 
     // Download Pictures
     char cmd[280];
-    for (int i = 0; i < 49; i++)
+    for (int i = 0; i < last; i++)
     {
         memset(cmd, '\0', 280);
         if (imgs[i].num == 1)
         {
             sprintf(cmd,
-                    "wget -O '%s%s.jpg' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s0_master1200.jpg",
+                    "wget -q -O '%s%s.jpg' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s0_master1200.jpg",
                     directory,
                     imgs[i].name,
                     imgs[i].url);
@@ -121,7 +153,7 @@ int main()
             {
                 memset(cmd,'\0',280);
                 sprintf(cmd,
-                    "wget -O '%s%s_%d.jpg' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s%d_master1200.jpg",
+                    "wget -q -O '%s%s_%d.jpg' '--referer=http://www.pixiv.net/' https://i.pximg.net/img-master/img/%s%d_master1200.jpg",
                     directory,
                     imgs[i].name,
                     j+1,
