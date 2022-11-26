@@ -16,7 +16,7 @@ colors:
     cyan: "#88C0D0"
     white: "#abb2bf"
 
-  
+
   bright:
     black: "#5c6370"
     red: "#e06c75"
@@ -45,7 +45,7 @@ font:
     style: Bold Italic
 
   # 字大小
-  size: 10.0 
+  size: 10.0
 
   offset:
     x: 0
@@ -55,7 +55,7 @@ font:
     y: 0
 
 window:
-  opacity: 
+  opacity:
     0.65
   padding:
     x: 2
@@ -65,7 +65,7 @@ scrolling:
 # 回滚缓冲区中的最大行数,指定“0”将禁用滚动。
   history: 10000
 
-  # 滚动行数 
+  # 滚动行数
 
   multiplier: 10
 
@@ -81,5 +81,3 @@ live_config_reload: true
 key_bindings:
   - { key: V, mods: command, action: Paste }
   - { key: C, mods: command, action: Copy }
-
-
