@@ -1,11 +1,13 @@
 alias kg="killall -g "
 alias kl="killall "
 alias c./="clang -o main main.c && ./main"
-alias vm="nvim "
-alias lm="lvim "
+alias ft="clang-format -style=file -i main.c"
+alias m="nvim "
 alias .g="git clone "
-alias sd="shutdown now"
 alias rt="rtorrent"
+alias s="sudo "
+alias c="clang -o "
+alias r="rm -rf "
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
