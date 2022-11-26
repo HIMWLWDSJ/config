@@ -177,24 +177,24 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-client.focused            #a5a4b4 #a5a4b4 #a5a4b4 #a5a4b4
-#client.focused_inactive   
-#client.unfocused          #181818	#181818	#181818	#181818
-client.urgent             #BF616A      #BF616A     #ffffff     #268BD2
-client.placeholder        #84FFFF      #909090     #FFFFFF     #268BD2
+client.focused            #2f2f2f #2f2f2f #2f2f2f #2f2f2f
+client.focused_inactive  #0c0c0c #0c0c0c #0c0c0c #0c0c0c
+client.unfocused          #0c0c0c #0c0c0c #0c0c0c #0c0c0c
+#client.urgent             #BF616A      #BF616A     #ffffff     #268BD2
+#client.placeholder        #84FFFF      #909090     #FFFFFF     #268BD2
 bindsym $mod+r mode "resize"
 bindsym $mod+w exec firefox
 bindsym $mod+e exec alacritty -e nnn
-bindsym $mod+i exec alacritty -e lvim
+bindsym $mod+i exec alacritty -e nvim
 
 
 bindsym $mod+m exec alacritty -e cmus
 bindsym $mod+s exec grim -o st.png
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-
-exec sudo timedatectl set-ntp true
-output * bg /home/him/Pictures/am.png fill
+exec swaybg -i /home/him/Pictures/pk.png
+# exec sudo timedatectl set-ntp true
+bindsym $mod+b exec rbg 3
 ##new_window none
 ##new_float normal
 #
